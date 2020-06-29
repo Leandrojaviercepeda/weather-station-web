@@ -1,0 +1,50 @@
+// User Actions
+export const ADD_CURRENT_USER = "ADD_CURRENT_USER";
+export const REMOVE_CURRENT_USER = "REMOVE_CURRENT_USER";
+export const ASSIGN_USER_CALL_STATUS = '/user/ASSIGN_USER_CALL_STATUS';
+export const RESET_USER_CALL_STATUS = '/user/RESET_USER_CALL_STATUS';
+export const USER_REQUEST = '/user/REQUEST';
+export const USER_TYPE_RECEIVE = '/user/type/RECEIVE';
+export const REMOVE_TYPE_OF_USER = "REMOVE_TYPE_OF_USER";
+
+// Client Actions
+export const ASSIGN_CLIENT_CALL_STATUS = '/client/ASSIGN_CLIENT_CALL_STATUS';
+export const RESET_CLIENT_CALL_STATUS = '/client/RESET_CLIENT_CALL_STATUS';
+export const CLIENT_REQUEST = '/client/REQUEST';
+export const CLIENT_RECEIVE = '/client/RECEIVE';
+export const REMOVE_CLIENT = 'REMOVE_CLIENT';
+export const CLIENTS_RECEIVE = '/clients/RECEIVE';
+
+// Plans Actions
+export const ASSIGN_PLANS_CALL_STATUS = '/plans/ASSIGN_PLANS_CALL_STATUS';
+export const RESET_PLANS_CALL_STATUS = '/plans/RESET_PLANS_CALL_STATUS';
+export const PLANS_REQUEST = '/plans/REQUEST';
+export const PLANS_RECEIVE = '/plans/RECEIVE';
+export const REMOVE_PLANS = 'REMOVE_PLANS';
+export const ADD_PLAN_TO_BE_SUSCRIBED = 'ADD_PLAN_TO_BE_SUSCRIBED';
+export const REMOVE_PLAN_TO_BE_SUSCRIBED = 'REMOVE_PLAN_TO_BE_SUSCRIBED';
+export const SET_PLAN_TO_EDIT = 'SET_PLAN_TO_EDIT';
+export const REMOVE_PLAN_TO_EDIT = 'REMOVE_PLAN_TO_EDIT';
+
+// Mercadopago Actions
+export const SET_PAYMENT_METHOD = 'SET_PAYMENT_METHOD';
+export const REMOVE_PAYMENT_DATA = 'REMOVE_PAYMENT_DATA';
+export const ASSIGN_PAYMENT_CALL_STATUS = '/payment/ASSIGN_PAYMENT_CALL_STATUS';
+export const RESET_PAYMENT_CALL_STATUS = '/payment/RESET_PAYMENT_CALL_STATUS';
+export const MERCADOPAGO_REQUEST = '/mercadopago/REQUEST';
+export const MERCADOPAGO_RECEIVE = '/mercadopago/RECEIVE';
+
+// Stations Actions
+export const ASSIGN_STATIONS_CALL_STATUS = '/stations/ASSIGN_STATIONS_CALL_STATUS';
+export const RESET_STATIONS_CALL_STATUS = '/stations/RESET_STATIONS_CALL_STATUS';
+export const STATIONS_REQUEST = '/stations/REQUEST';
+export const STATIONS_RECEIVE = '/stations/RECEIVE';
+export const SET_STATION_TO_EDIT = 'SET_STATION_TO_EDIT';
+export const REMOVE_STATION_TO_EDIT = 'REMOVE_STATION_TO_EDIT';
+
+// Measurements Actions
+export const MEASUREMENTS_REQUEST = '/measurements/REQUEST';
+export const MEASUREMENTS_RECEIVE = '/measurements/RECEIVE';
+export const ASSIGN_MEASUREMENTS_CALL_STATUS = 'ASSIGN_MEASUREMENTS_CALL_STATUS';
+export const RESET_MEASUREMENTS_CALL_STATUS = 'RESET_MEASUREMENTS_CALL_STATUS';
+export const REMOVE_MEASUREMENTS = 'REMOVE_MEASUREMENTS';
