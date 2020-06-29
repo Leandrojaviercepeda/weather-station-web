@@ -14,7 +14,7 @@ import * as moment from 'moment';
 
 function ApiDoc() {
 
-    const [baseConcepcionDelUruguay, setBaseConcepcionDelUruguay] = useState(null)
+    const [station, setStation] = useState(null)
     const [weatherData, setWeatherData] = useState('')
     const [weatherDataBetweenDates, setWeatherBetweenDates] = useState('')
     const [stationData, setStationData] = useState('')
@@ -35,40 +35,40 @@ function ApiDoc() {
     if (!stations) handleStationsFetch()
 
     useEffect(() => {
-        if (!baseConcepcionDelUruguay && stations) 
-            setBaseConcepcionDelUruguay(stations.find(station => station.name === 'Base Concepcion Del Uruguay'))
+        if (!station && stations) 
+            setStation(stations.find(station => station.name === 'Base Gualeguaychu'))
 
-    }, [baseConcepcionDelUruguay, stations])
+    }, [station, stations])
     
     useEffect(() => {        
-        if (baseConcepcionDelUruguay)
+        if (station)
             if (weatherData === '') 
-                getWeatherDataByPlace(baseConcepcionDelUruguay.region, baseConcepcionDelUruguay.city)
+                getWeatherDataByPlace(station.region, station.city)
                     .then(res => setWeatherData(JSON.stringify(res.data, null, 2)))
 
-    }, [weatherData, baseConcepcionDelUruguay])
+    }, [weatherData, station])
 
     useEffect(() => {        
-        if (baseConcepcionDelUruguay)
+        if (station)
             if (weatherDataBetweenDates === '') 
                 getWeatherDataBetweenDates(
-                    baseConcepcionDelUruguay.id, 
+                    station.id, 
                     moment(new Date().getTimezoneOffset()).format('YYYY/MM/DD HH:mm').toString(), 
                     moment(new Date().getTime()).format('YYYY/MM/DD HH:mm').toString())
                         .then(res => setWeatherBetweenDates(JSON.stringify(res.data, null, 2)))
 
-    }, [weatherDataBetweenDates, baseConcepcionDelUruguay])
+    }, [weatherDataBetweenDates, station])
 
     useEffect(() => {        
-        if (baseConcepcionDelUruguay)
+        if (station)
             if (stationData === '') 
-                getStationDataByPlace(baseConcepcionDelUruguay.region, baseConcepcionDelUruguay.city)
+                getStationDataByPlace(station.region, station.city)
                     .then(res => setStationData(JSON.stringify(res.data, null, 2)))
 
-    }, [stationData, baseConcepcionDelUruguay])
+    }, [stationData, station])
 
     useEffect(() => {        
-        if (baseConcepcionDelUruguay)
+        if (station)
             if (stationDataBetweenDates === '') 
                 getStationDataBetweenDates(
                     moment(new Date().getTimezoneOffset()).format('YYYY/MM/DD HH:mm').toString(), 
@@ -76,7 +76,7 @@ function ApiDoc() {
                     10)
                         .then(res => setStationDataBetweenDates(JSON.stringify(res.data, null, 2)))
 
-    }, [stationDataBetweenDates, baseConcepcionDelUruguay])
+    }, [stationDataBetweenDates, station])
 
     return (
         <Fragment>
@@ -114,7 +114,7 @@ function ApiDoc() {
                         <br/>
                         city: nombre de la ciudad.
                         <br/>
-                        Ejemplos de llamadas a la API: {` ${WERATHERST_CLIENT_API_URL}/weather/measurements/onLocation?region=Entre Rios&city=Concepcion del Uruguay&apikey={your apikey}`}
+                        Ejemplos de llamadas a la API: {` ${WERATHERST_CLIENT_API_URL}/weather/measurements/onLocation?region=Entre Rios&city=Gualeguaychú&apikey={your apikey}`}
                     </p>
                     <div className="card border-dark mb-3 w-75">
                         <div className="card-header">Ejemplo de Respuesta API</div>
@@ -266,7 +266,7 @@ function ApiDoc() {
                         <br/>
                         city: nombre de la ciudad.
                         <br/>
-                        Ejemplos de llamadas a la API: {` ${WERATHERST_CLIENT_API_URL}/stations/locatedAt?region=Entre Rios&city=Concepcion del Uruguay&apikey={your apikey}`}
+                        Ejemplos de llamadas a la API: {` ${WERATHERST_CLIENT_API_URL}/stations/locatedAt?region=Entre Rios&city=Gualeguaychú&apikey={your apikey}`}
                     </p>
                     <div className="card border-dark mb-3 w-75">
                         <div className="card-header">Ejemplo de Respuesta API</div>
